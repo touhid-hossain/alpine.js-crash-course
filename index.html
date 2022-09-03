@@ -1,13 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alpine Crash Course</title>
-</head>
-<body>
-    
-    
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <script src="https://cdn.tailwindcss.com" defer></script>
+    <title>Alpine Crash Course || Traversy</title>
+    <style>
+      [x-cloak] {
+        display: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- X-DATA -->
+    <div class="container mx-auto mt-6 max-w-sm" x-data="{open:true, name:'Touhid'}">
+      <h1 class="text-5xl mb-4">Alpine.js Demo</h1>
+
+      <!-- X-ON & X-BIND -->
+      <button  x-on:click="open = !open"
+      x-bind:class="open ? 'bg-blue-800' : 'bg-slate-700'"
+      class="bg-slate-700 text-white px-4 py-2 rounded-xl">
+        Toggle
+      </button>  
+
+      <!-- X-SHOW -->
+      <div x-show="open" x-transition x-cloak>
+        <p class="bg-gray-200 p-4 my-6">
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ratione
+          quaerat commodi esse excepturi labore vero inventore quas. Nisi
+          quibusdam corporis, dolorem debitis laboriosam commodi impedit
+          incidunt, doloribus quis, saepe recusandae.
+        </p>
+      </div> 
+
+      <!-- X-TEXT -->
+      <div class="my-4">
+        The value of name is <span x-text="name" class="font-bold"></span> 
+      </div>
+    </div>
+
+  </body>
+  <script></script>
 </html>
